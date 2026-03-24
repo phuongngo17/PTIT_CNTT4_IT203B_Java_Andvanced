@@ -1,0 +1,3 @@
+Input / Output
+Input: Không có tham số từ Frontend, chỉ là yêu cầu lấy danh sách bệnh nhân đang nằm tại khoa.
+Output: List<BenhNhanDTO> trong đó mỗi BenhNhanDTO chứa thông tin bệnh nhân + List<DichVu> dịch vụ đã sử dụng (có thể rỗng).

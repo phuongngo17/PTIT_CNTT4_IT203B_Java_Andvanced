@@ -1,0 +1,7 @@
+Trong JDBC, khi bạn đã tắt Auto-Commit và chỉ gọi commit() ở cuối,
+thì nếu xảy ra lỗi ở bước 2, transaction sẽ bị dừng lại.
+Tuy nhiên, trong khối catch bạn chỉ in lỗi bằng System.out.println(e) mà không gọi rollback().
+Điều này vi phạm nguyên tắc Transaction,
+vì khi có lỗi, bạn phải chủ động hủy bỏ toàn bộ giao dịch để đưa CSDL về trạng thái an toàn trước đó.
+Nếu thiếu rollback(), kết nối sẽ giữ nguyên trạng thái transaction chưa hoàn tất,
+gây “treo” và ảnh hưởng đến các thao tác khác

@@ -1,0 +1,8 @@
+Trong JDBC, mặc định Auto-Commit = true. Nghĩa là:
+
+Mỗi câu lệnh SQL (executeUpdate, executeQuery) được thực thi xong sẽ tự động commit ngay lập tức.
+Viết 2 câu lệnh liên tiếp, thì câu lệnh đầu tiên đã được commit vào CSDL trước khi câu lệnh thứ hai chạy.
+
+Khi mạng chập chờn hoặc lỗi xảy ra ở câu lệnh thứ hai, câu lệnh đầu tiên không bị rollback vì nó đã commit rồi.
+Kết quả: thuốc trong kho đã bị trừ (commit thành công), nhưng bản ghi lịch sử không được lưu (câu lệnh sau thất bại).
+ Đây chính là vi phạm tính Atomicity của Transaction.

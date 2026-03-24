@@ -1,0 +1,10 @@
+Mở kết nối DB.
+Tắt AutoCommit.
+Lấy số dư tạm ứng của bệnh nhân.
+Kiểm tra số dư (Bẫy 1). Nếu không đủ → rollback.
+Trừ tiền viện phí. Kiểm tra RowAffected (Bẫy 2).
+Giải phóng giường bệnh. Kiểm tra RowAffected (Bẫy 2).
+Cập nhật trạng thái bệnh nhân. Kiểm tra RowAffected (Bẫy 2).
+Nếu tất cả thành công → commit.
+Nếu bất kỳ lỗi nào → rollback.
+Đóng kết nối.

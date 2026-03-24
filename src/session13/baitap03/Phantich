@@ -1,0 +1,6 @@
+Input:
+maBenhNhan (int): mã định danh bệnh nhân
+tienVienPhi (double): số tiền viện phí cần trừ
+Output:
+Trả về thông báo thành công (đã xuất viện, đã thanh toán, giường trống)
+Hoặc ném ra Exception nếu thất bại (thiếu tiền, bệnh nhân không tồn tại, lỗi SQL)

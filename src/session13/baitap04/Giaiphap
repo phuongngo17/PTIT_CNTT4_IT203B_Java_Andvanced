@@ -1,0 +1,10 @@
+Giải pháp 1 – Truy vấn N+1 (cách cũ, gây lỗi hiệu năng)
+Bước 1: Lấy danh sách bệnh nhân bằng 1 câu SQL.
+Bước 2: Với mỗi bệnh nhân, lại chạy thêm 1 câu SQL để lấy dịch vụ.
+Kết quả: 500 bệnh nhân → 501 query.
+Bẫy hiệu năng: Network I/O quá nhiều, response time > 10s.
+Giải pháp 2 – Truy vấn JOIN (cách tối ưu)
+Viết 1 câu SQL duy nhất dùng LEFT JOIN giữa BenhNhan và DichVuSuDung.
+Lấy về tất cả dữ liệu trong một lần.
+Trên Java, duyệt ResultSet, gom nhóm theo maBenhNhan để build BenhNhanDTO.
+Bẫy 2: Dùng LEFT JOIN để đảm bảo bệnh nhân chưa có dịch vụ vẫn xuất hiện với danh sách rỗng.

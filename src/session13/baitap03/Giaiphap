@@ -1,0 +1,5 @@
+Sử dụng JDBC Transaction: conn.setAutoCommit(false) để gom 3 câu lệnh vào cùng một transaction.
+Nếu cả 3 câu lệnh thành công → conn.commit().
+Nếu bất kỳ lỗi nào xảy ra → conn.rollback().
+Bẫy 1 (Thiếu tiền): Trước khi trừ tiền, kiểm tra số dư. Nếu số dư < viện phí → ném Exception, rollback.
+Bẫy 2 (Row Affected = 0): Sau mỗi executeUpdate(), kiểm tra số dòng bị ảnh hưởng. Nếu = 0 → ném Exception, rollback.
