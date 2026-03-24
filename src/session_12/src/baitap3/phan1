@@ -1,0 +1,15 @@
+Vì sao JDBC bắt buộc phải gọi registerOutParameter() trước khi thực thi?
+
+Vì với CallableStatement, JDBC cần biết tham số nào là OUT và kiểu dữ liệu SQL của nó để driver chuẩn bị vùng nhận dữ liệu trả về từ Stored Procedure.
+
+Nếu không gọi registerOutParameter() trước execute() thì driver không biết:
+
+tham số nào sẽ được DB trả ngược ra,
+kiểu dữ liệu của tham số OUT là gì,
+cần chuyển đổi sang kiểu Java nào.
+
+Kết quả thường gặp là:
+
+không lấy được giá trị OUT,
+hoặc lỗi như The column index is out of range,
+hoặc lỗi kiểu dữ liệu khi gọi getBigDecimal(), getDouble(), ...

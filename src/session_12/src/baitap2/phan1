@@ -1,0 +1,6 @@
+setDouble() và setInt() giúp tránh
+lỗi định dạng số vì chúng truyền dữ liệu
+theo kiểu dữ liệu gốc, không phụ thuộc vào
+cách hiển thị số của hệ điều hành hay Locale.
+Nhờ đó, câu lệnh SQL luôn đúng cú pháp
+và an toàn hơn so với nối chuỗi bằng Statement.

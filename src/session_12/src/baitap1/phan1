@@ -1,0 +1,5 @@
+Cấu trúc câu lệnh SQL được cố định trước
+Tham số đầu vào không thể phá vỡ cấu trúc đó
+Dù người dùng nhập ' OR '1'='1 thì Database cũng xem nó chỉ là một chuỗi ký tự, không phải lệnh SQL
+
+Vì thế, PreparedStatement ngăn không cho dữ liệu đầu vào “chen” vào logic truy vấn.
