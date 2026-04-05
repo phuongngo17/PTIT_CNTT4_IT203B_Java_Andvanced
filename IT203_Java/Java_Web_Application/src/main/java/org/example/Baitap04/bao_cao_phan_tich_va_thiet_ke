@@ -1,0 +1,12 @@
+Tiêu chí	               Constructor Injection	         Field Injection
+Rõ dependency	                 Rõ ràng	                      Ẩn
+Test (mock SMS lỗi)	             Rất dễ	                          Khó
+Null-safety	                     An toàn	                      Rủi ro
+Xử lý lỗi (SMS down)	         Chủ động, dễ kiểm soát	           Vẫn xử lý được nhưng khó test
+
+Constructor Injection
+Vì:
+Phù hợp hệ thống production
+Dễ test case lỗi mạng (mock SMS fail)
+Đảm bảo ổn định hệ thống
+Tuân thủ clean architecture

@@ -1,0 +1,24 @@
+Định nghĩa:
+Input:
+username: String   (tài khoản người chơi)
+foodName: String   (tên món, ví dụ: "Mì xào bò")
+quantity: int      (số lượng)
+Output:
+Thành công
+"Đặt món thành công: Mì xào bò x2"
+
+-Xử lý logic:
+Nhận request từ user:
+username
+foodName
+quantity
+Kiểm tra tồn kho:
+Nếu stock < quantity -> báo "Hết món"
+Tính tiền:
+price = đơn giá X số lượng
+Kiểm tra số dư:
+Nếu balance < price -> "Không đủ tiền"
+Nếu hợp lệ:
+Trừ kho
+Trừ tiền
+Trả kết quả thành công
